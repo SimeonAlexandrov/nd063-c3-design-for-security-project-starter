@@ -1,5 +1,6 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
-
+The web service instance is in a public subnet. I would rather put it in a private one. The attacker wouldn't be able to run port scans if the instance is in a private subnet.
 # Poor practice 2
+The privilleged business users are accessing directly the secret recipes bucket. I feel that using an internet gatweway would be good for authorization, auditing and so on.
