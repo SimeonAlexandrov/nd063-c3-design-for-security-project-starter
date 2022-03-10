@@ -1,3 +1,8 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+The applications serves HTTP requests. Ideally, HTTPS should be used and redirection rule should be added to the application load balancer. This is why I have `securityhub-alb-http-to-https-redirection-check-cecaf35f` noncompliant rule in AWS Config
+The S3 buckets are not compliant according to AWS Config. For example, server side encryption is not enabled for both the free and secret recipes. It is considered to be a best practice to have it enabled for all data stored in AWS. Moreover all public access should be blocked.
+The EC2 instance has public IP. Since it is behind an application load balancer, it doesn't make sense to expose it to the outside world. As I previously mentioned, it is better to have the EC2 instance in a private subnet.
+The EC2 instance has a reachable port range of 0-65535. This can be remediated by modifying ACLs or security groups.
