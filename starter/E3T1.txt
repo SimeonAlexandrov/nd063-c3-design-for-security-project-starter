@@ -1,3 +1,5 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
-
+Unfortunately for me GuardDuty does not present any findings related to the attack. Using the knowledge center I learnt that the attack should be classified as SSH BruteForce.
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+From AWS documentation:
+  The source of UnauthorizedAccess:EC2/SSHBruteForce is VPC Flow Logs. This finding is generated only through monitoring traffic on port 22. This finding can be remediated by securing your SSH port to only trusted IPs through Security Groups, ACLs, or firewalls.
