@@ -1,13 +1,14 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
-
+https://bridgecrew.io/infrastructure-as-code-security/
 ### Example vulnerability
-
+It's common for developers to use default configurations, that are not optimized for security. For example, unecrypted databases, public s3 buckets, deployments using insecure protocols. IaC Compliance check tools such as bridgecrew can help with these.
 ##Scan AMI’s or containers for OS vulnerabilities
-
+https://snyk.io/
 ### Example vulnerability
-
+Snyk.io scans and resolves open source libraries vulnerabilities. It also allows container and IaC scanning. With container scanning a user can be prompted to upgrade the base image of a container.
 ##Scan an AWS environment for cloud configuration vulnerabilities
-
+https://aws.amazon.com/config/
 ### Example vulnerability
+AWS Config continuously monitors and records configuration changes of your AWS resources. For example AWS config has this rule s3-bucket-public-read-prohibited - it means that AWS Config will detect if any S3 bucket allows public read access. 
