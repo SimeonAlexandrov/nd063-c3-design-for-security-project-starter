@@ -1,5 +1,8 @@
 
 
 # Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+Leaving port 22 open for public access is a major vulnerability. AWS Systems Manager is an option for a secure access to the EC2 instance, but arguably having immutable instances and avoiding logging in the instance is the best approach.
+Using security groups only specific whitelisted IP addresses should be able to SSH into the EC2 instance.
 
 # Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+In the case of compromised API credentials, client-side encryption might be useful. This way even if a file is downloaded by an attacker, they won't be able to decrypt it.

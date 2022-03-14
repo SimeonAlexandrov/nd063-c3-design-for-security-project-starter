@@ -1,8 +1,9 @@
 
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
-
+The application instance can be in a private subnet. 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
-
+Assuming the application instance is still in a public subnet, VPC private endpoints wouldn't help. 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
-
+No, to encrypt existing s3 file one should user Amazon S3 Batch Operations. 
 # What would happen if the original cloud formation templates are applied to this environment.
+I am not 100% for AWS SAM, but in terraform if you deploy a stack using IaC, then every change to the infra should be made through the IaC tool, otherwise the configuration becomes of out sync with the actual state of the infra and is unable to make new changes to env. 
